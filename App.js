@@ -25,6 +25,12 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import Smartlook from 'react-native-smartlook-analytics';
+
+Smartlook.instance.preferences.setProjectKey(
+  'jzxm4atyvpa7i7wdapxgtchdhiptcmya8dlvs___',
+);
+Smartlook.instance.start();
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';

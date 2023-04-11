@@ -1,6 +1,7 @@
 #include "MainApplicationModuleProvider.h"
 
 #include <rncore.h>
+#include <SmartlookAnalytics.h>
 
 namespace facebook {
 namespace react {
@@ -16,6 +17,12 @@ std::shared_ptr<TurboModule> MainApplicationModuleProvider(
   // if (module != nullptr) {
   //    return module;
   // }
+
+  auto module = SmartlookAnalytics_ModuleProvider(moduleName, params);
+  if (module != nullptr) {
+      return module;
+  }
+
   // return rncore_ModuleProvider(moduleName, params);
   return rncore_ModuleProvider(moduleName, params);
 }
